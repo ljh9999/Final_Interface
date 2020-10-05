@@ -54,6 +54,7 @@ typedef enum ApplicationType {
     APPLICATION_BDT,   // 商业数据统计
     APPLICATION_VMS,   // 车载系统
     APPLICATION_SHELF, // 货架商品审计, 分四种类型: 拍照, 摄像头正拍, 摄像头斜拍(变化比), 生鲜标签
+    APPLICATION_ACTION, // 店员行为识别
     /// 使用时根据需要在下方扩展
 } ApplicationType;
 
@@ -262,13 +263,25 @@ typedef enum AssistAction {
 
 // 对应的店员行为分析结果
 typedef struct ActionAIResult {
-    AssistAction *shelf_action;   // 店员行为
+    AssistAction *assist_action;   // 店员行为
     void *      ai_frame;         // 送入分析的数据, 针对不同的类型, 对应不同的ShelfXXXAIFrame
     FrameInfo * ai_result_frame;  // 分析结果帧
     std::string ai_result_detail; // 分析结果描述
     int reserved[6]; // 保留字段
 } ActionAIResult;
 
+//typedef struct ActionAIResult {
+//    ShelfAction *shelf_action;
+//    RectF *      all_target_box_rt;  // 目标框
+//    int          target_box_rt_size; // 目标框数目
+//
+//    void *                   ai_frame;         // 送入分析的数据
+//    FrameInfo *              ai_result_frame;  // 分析结果帧(如果需要上传图片的话需要分析库内部生成一张图片并放入图片数据)
+//    std::string              ai_result_detail; // 分析结果描述
+//    std::vector<FreshDetail> all_fresh_detail; //
+//
+//    int reserved[6]; // 保留字段
+//} ActionAIResult;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -358,8 +371,8 @@ int SVIP_AI_Action_Initialize();
 int SVIP_AI_Action_Uninitialize();
 int SVIP_AI_Action_Start(ApplicationType application_type, CameraType camera_type, void *ai_params, int ai_params_size, svip_ai_result_cb cb, void *user, void **ai_handle);
 int SVIP_AI_Action_Stop(void *ai_handle);
-int SVIP_AI_Action_SetFrame(void *ai_handle, void *ai_frame);
-int SVIP_AI_Action_InputFrame(void *ai_handle, const char *md5, void *ai_frame);
+//int SVIP_AI_Action_SetFrame(void *ai_handle, void *ai_frame);
+//int SVIP_AI_Action_InputFrame(void *ai_handle, const char *md5, void *ai_frame);
 
 #ifdef __cplusplus
 }
