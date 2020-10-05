@@ -238,7 +238,7 @@ int LogisticRegression::load_weights(const string &sFileName) {
     weights.clear();
     int iNum = 0;
     in >> iNum;
-
+// weights是个vector，如此加载的权重。
     weights.resize(iNum, 0.0);
     for (int i=0; i<iNum; i++){
         in >> weights[i];

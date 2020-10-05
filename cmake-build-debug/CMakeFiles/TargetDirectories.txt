@@ -1,3 +1,7 @@
 /home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/CMakeFiles/Final_Interface.dir
+/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/CMakeFiles/Interface.dir
 /home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/CMakeFiles/rebuild_cache.dir
+/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/CMakeFiles/edit_cache.dir
+/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/CMakeFiles/svip_action.dir
+/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/CMakeFiles/wrapper.dir

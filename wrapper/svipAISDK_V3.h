@@ -248,6 +248,9 @@ typedef struct ShelfFreshAIResult {
 
 ////////////////////////////////////////////////// 店员行为分析相关定义 //////////////////////////////////////////////////
 // 对应的店员行为分析参数
+typedef struct ActionAIFrame {
+    FrameInfo *                      frame_info;           // 从摄像头取得的图像(目前是 PIXEL_FMT_IYUV 格式)
+} ActionAIFrame;
 typedef struct ActionAIParam {
     float Threshold;
     float motivation;
@@ -371,8 +374,8 @@ int SVIP_AI_Action_Initialize();
 int SVIP_AI_Action_Uninitialize();
 int SVIP_AI_Action_Start(ApplicationType application_type, CameraType camera_type, void *ai_params, int ai_params_size, svip_ai_result_cb cb, void *user, void **ai_handle);
 int SVIP_AI_Action_Stop(void *ai_handle);
-//int SVIP_AI_Action_SetFrame(void *ai_handle, void *ai_frame);
-//int SVIP_AI_Action_InputFrame(void *ai_handle, const char *md5, void *ai_frame);
+int SVIP_AI_Action_SetFrame(void *ai_handle, void *ai_frame);
+int SVIP_AI_Action_InputFrame(void *ai_handle, const char *md5, void *ai_frame);
 
 #ifdef __cplusplus
 }

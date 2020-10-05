@@ -4,7 +4,6 @@
 #include "wrapper/svip_action.h"
 #include "wrapper/svipAISDK_V3.h"
 #include "md5.h"
-
 using namespace std;
 
 int callback(ApplicationType application_type,CameraType camera_type, void *ai_handle, void *ai_result, int ai_result_size, void *user)
@@ -16,17 +15,11 @@ int callback(ApplicationType application_type,CameraType camera_type, void *ai_h
     cout << actionAIResult->assist_action << endl;
 }
 
-//todo
-// 1, 不能一味的迎合修改，而是适合于我现在的代码，比如模型加载部分，也就是model.txt，要不要用一个类去封装，应该是不需要的。否则换来的还是折磨与重写
-// 2，具体而言
-
 int main()
 {
     Mat im;
-    char* tfliteModel;
     int res;
     im = cv::imread("0.jpg");
-    tfliteModel = "pose.tflite";
 
     MD5_CTX _md5;
     void * ai_handle;
@@ -51,7 +44,7 @@ int main()
         cerr << "model file can't open" << endl;
         return -1;
     }
-
+    // 在这儿，将模型参数param传递到了SVIP_AI_Action_Start当中
     SVIP_AI_Action_Start(APPLICATION_ACTION, CAMERA_SHELF_FRONT, param, 0, callback, nullptr, &ai_handle);
     FrameInfo frameInfo;
     auto filename = "000.jpg";
@@ -78,17 +71,26 @@ int main()
         sprintf(md5_out + i + i, "%02x", decrypt[i]);
     }
 
-//todo
-// 1, 修改这个start的接口。。。
-// 2,
+    ActionAIFrame actionAiFrame;
+    // 将前面的frameInfo给弄过来
+    actionAiFrame.frame_info = &frameInfo;
 
+    SVIP_AI_Action_SetFrame(ai_handle, (void*)&actionAiFrame);
 
-    auto extractor = new Extract(im, tfliteModel);
-    LogisticRegression lr;
+    SVIP_AI_Action_InputFrame(ai_handle,md5_out,(void*)&actionAiFrame);
+    SVIP_AI_Action_Stop(ai_handle);
+    SVIP_AI_Action_Uninitialize();
 
-    lr.load_weights("model.txt");
-    res = lr.predict(extractor->_res);
-    cout << res <<endl;
+//    auto extractor = new Extract(im, tfliteModel);
+
+//    LogisticRegression lr;
+
+    // 逻辑回归接口，加载模型
+    // load_weights加载模型
+    // lr.load_weights("model.txt");
+
+//    res = lr.predict(extractor->_res);
+//    cout << res <<endl;
     return 0;
 }
 

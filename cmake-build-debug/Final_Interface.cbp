@@ -5,7 +5,7 @@
 		<Option title="Final_Interface"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;CMake Files\wrapper\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug"/>
@@ -27,8 +27,8 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Final_Interface">
-				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Final_Interface" prefix_auto="0" extension_auto="0"/>
+			<Target title="Interface">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Interface" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -47,14 +47,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final_Interface"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 Interface"/>
 					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Final_Interface/fast">
-				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Final_Interface" prefix_auto="0" extension_auto="0"/>
+			<Target title="Interface/fast">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Interface" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,7 +73,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final_Interface/fast"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 Interface/fast"/>
 					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -89,15 +89,125 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="svip_action">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/libsvip_action.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include/tensorflow/contrib/makefile/downloads/flatbuffers/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 svip_action"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="svip_action/fast">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/libsvip_action.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include/tensorflow/contrib/makefile/downloads/flatbuffers/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 svip_action/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wrapper">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/libwrapper.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include/tensorflow/contrib/makefile/downloads/flatbuffers/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 wrapper"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wrapper/fast">
+				<Option output="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/libwrapper.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include"/>
+					<Add directory="/home/ljh/Documents/action_detect/Final/Final_Interface/include/tensorflow/contrib/makefile/downloads/flatbuffers/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 wrapper/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/ljh/Documents/action_detect/Final/Final_Interface/cmake-build-debug/wrapper/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/main.cpp">
-			<Option target="Final_Interface"/>
+			<Option target="Interface"/>
+		</Unit>
+		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/src/md5.cpp">
+			<Option target="Interface"/>
+			<Option target="wrapper"/>
 		</Unit>
 		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svip_action.cpp">
-			<Option target="Final_Interface"/>
+			<Option target="Interface"/>
+			<Option target="svip_action"/>
+			<Option target="wrapper"/>
 		</Unit>
 		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svip_action.h">
-			<Option target="Final_Interface"/>
+			<Option target="Interface"/>
 		</Unit>
 		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -113,6 +223,9 @@
 		</Unit>
 		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\wrapper\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

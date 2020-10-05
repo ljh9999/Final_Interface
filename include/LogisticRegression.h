@@ -9,7 +9,6 @@
 #include <string>
 #include <vector>
 #include <assert.h>
-#include "common.h"
 #include <random>
 #include <chrono>
 #include <algorithm>
@@ -47,16 +46,18 @@ public:
 
     int get_weights();
     int save_weights(const string & sFileName);
+
     int load_weights(const string & sFileName);
 
     float score(DataSet* dataset);
+
+    std::vector<float> weights;
 
 private:
     int maxIter_;
     string model_file;
     float learnRate_;
     float tol_;
-    std::vector<float> weights;
 };
 
 #endif //LR2_LOGISTICREGRESSION_H
