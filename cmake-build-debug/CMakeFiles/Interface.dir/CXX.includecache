@@ -308,18 +308,6 @@ string
 vector
 -
 
-/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svip_action.cpp
-Extract.h
--
-memory
--
-svip_action.h
-/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svip_action.h
-fstream
-/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/fstream
-svipAISDK_V3.h
-/home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svipAISDK_V3.h
-
 /home/ljh/Documents/action_detect/Final/Final_Interface/wrapper/svip_action.h
 opencv2/opencv.hpp
 -

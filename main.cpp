@@ -5,15 +5,14 @@
 #include "wrapper/svipAISDK_V3.h"
 #include "md5.h"
 using namespace std;
-
 int callback(ApplicationType application_type,CameraType camera_type, void *ai_handle, void *ai_result, int ai_result_size, void *user)
 {
-    cout << "get here.." << endl;
     auto img = cv::imread("0.jpg");
     int cols = img.cols;
     int rows = img.rows;
     auto actionAIResult = (ActionAIResult*)ai_result;
     cout << actionAIResult->assist_action << endl;
+    cout << "终于成功了" << endl;
 }
 
 int main()
@@ -47,6 +46,7 @@ int main()
     }
     // 在这儿，将模型参数param传递到了SVIP_AI_Action_Start当中
     SVIP_AI_Action_Start(APPLICATION_ACTION, CAMERA_SHELF_FRONT, param, 0, callback, nullptr, &ai_handle);
+//    int SVIP_AI_Action_Start(ApplicationType application_type, CameraType camera_type, void *ai_params, int ai_params_size, svip_ai_result_cb cb, void *user, void **ai_handle)
     FrameInfo frameInfo;
     auto filename = "000.jpg";
     auto img_ori = cv::imread(filename);

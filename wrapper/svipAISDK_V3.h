@@ -288,7 +288,6 @@ typedef struct ActionAIResult {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// \param application_types: 应用主类型, SVIP_AI_Start 时传入
 /// \param camera_type: 应用子类型, SVIP_AI_Start 时传入
 /// \param ai_handle: 分析句柄, 一路分析的标识, SVIP_AI_Start 时得到

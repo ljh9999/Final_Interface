@@ -80,12 +80,24 @@ int SVIP_AI_Action_InputFrame(void *ai_handle, const char *md5, void *ai_frame) 
     cv::cvtColor(yuv, img, cv::COLOR_YUV2BGR_I420);
     int result;
     action_Ins->deal_frame(img, result);
+
     ActionAIResult actionAiResult;
     actionAiResult.assist_action = reinterpret_cast<AssistAction *>(result);
 
-    cout << actionAiResult.assist_action << endl;
 
-    return 0;
+    auto f = [&](const ActionAIResult& aiResult) -> size_t {
+        size_t size = 0;
+//        size = sizeof(ShelfFrontAIResult) + aiResult.target_box_rt_size * (sizeof(ShelfAction) + sizeof(RectF));
+//        size += sizeof(FrameInfo) + sizeof(unsigned char) * aiResult.ai_result_frame->data_size;
+//        size += sizeof(ShelfFrontAIFrame) + sizeof(FrameInfo) + sizeof(unsigned char) * frame_info->data_size;
+        return size;
+    };
+
+
+    action_Ins->_cb(action_Ins->_applicationType, action_Ins->_cameraType, (void*) action_Ins, &actionAiResult, f(actionAiResult), action_Ins->_user);
+
+
+    return SVIP_AI_OK;
 }
 
 int SVIP_AI_Action_SetFrame(void *ai_handle, void *ai_frame) {
