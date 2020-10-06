@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libSvipAct.so -o libSvipAct.so CMakeFiles/SvipAct.dir/svip_action.cpp.o CMakeFiles/SvipAct.dir/__/src/md5.cpp.o  -L/home/ljh/Documents/action_detect/Final/Final_Interface/lib 

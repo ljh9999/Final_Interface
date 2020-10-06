@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libwrapper.so -o libwrapper.so CMakeFiles/wrapper.dir/svip_action.cpp.o CMakeFiles/wrapper.dir/__/src/md5.cpp.o  -L/home/ljh/Documents/action_detect/Final/Final_Interface/lib 

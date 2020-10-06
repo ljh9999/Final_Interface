@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libsvip_action.so -o libsvip_action.so CMakeFiles/svip_action.dir/svip_action.cpp.o  -L/home/ljh/Documents/action_detect/Final/Final_Interface/lib 
