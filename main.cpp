@@ -8,6 +8,7 @@ using namespace std;
 
 int callback(ApplicationType application_type,CameraType camera_type, void *ai_handle, void *ai_result, int ai_result_size, void *user)
 {
+    cout << "get here.." << endl;
     auto img = cv::imread("0.jpg");
     int cols = img.cols;
     int rows = img.rows;
